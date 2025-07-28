@@ -2,6 +2,7 @@ package com.github.basdgrt.scraping
 
 import arrow.core.Either
 import arrow.core.raise.either
+import com.github.basdgrt.models.Price
 import com.github.basdgrt.scraping.ParseFailure.FailedToFindPriceElement
 import org.jsoup.nodes.Document
 

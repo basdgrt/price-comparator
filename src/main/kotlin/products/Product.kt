@@ -1,7 +1,7 @@
 package com.github.basdgrt.products
 
-import com.github.basdgrt.scraping.Price
-import com.github.basdgrt.scraping.Webshop
+import com.github.basdgrt.models.Price
+import com.github.basdgrt.models.Webshop
 
 val products: List<Product> = listOf(
     Product(

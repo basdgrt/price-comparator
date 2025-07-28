@@ -1,13 +1,19 @@
 package com.github.basdgrt.scraping
 
+import arrow.core.Either
+import com.github.basdgrt.models.Price
+import com.github.basdgrt.models.Webshop
+import com.github.basdgrt.models.Webshop.*
 import com.github.basdgrt.products.Product
 import com.github.basdgrt.products.ProductDetailPage
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import java.math.BigDecimal
 
 private val log = KotlinLogging.logger {}
+
+data class ProductPrices(val productName: String, val scrapeResults: List<ScrapeResult>)
+data class ScrapeResult(val webshop: Webshop, val price: Either<ParseFailure, Price>)
 
 class PriceScraper(
     private val bolParser: PriceParser = BolPriceParser(),
@@ -15,20 +21,23 @@ class PriceScraper(
     private val vanAstenPriceParser: PriceParser = VanAstenPriceParser()
 ) {
 
-    fun scrape(product: Product) {
+    fun scrape(product: Product): ProductPrices {
         log.info { "Finding prices for ${product.name}" }
 
-        product.productDetailPages.forEach { detailPage ->
+        val scrapeResults = product.productDetailPages.map { detailPage ->
             val html = fetchHTMLDocument(detailPage)
 
-           val result = when (detailPage.webshop) {
-                Webshop.BOL -> bolParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
-                Webshop.BABY_PARK -> babyParkParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
-               Webshop.VAN_ASTEN -> vanAstenPriceParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
-           }
-
-            log.info { "Scraped price from ${detailPage.webshop}: €$result" }
+            when (detailPage.webshop) {
+                BOL -> ScrapeResult(BOL, bolParser.parse(html))
+                BABY_PARK -> ScrapeResult(BABY_PARK, babyParkParser.parse(html))
+                VAN_ASTEN -> ScrapeResult(VAN_ASTEN, vanAstenPriceParser.parse(html))
+            }
         }
+
+        return ProductPrices(
+            productName = product.name,
+            scrapeResults = scrapeResults
+        )
     }
 
     // Connect to the URL and get the HTML document

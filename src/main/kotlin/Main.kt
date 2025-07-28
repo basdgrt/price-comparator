@@ -7,11 +7,12 @@ import com.github.basdgrt.scraping.PriceScraper
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
 
-
     // Create a price scraper and use it to scrape the price from the product URL
     val priceScraper = PriceScraper()
 
     products.forEach { product ->
-        priceScraper.scrape(product)
+        val results = priceScraper.scrape(product)
+
+        println(results)
     }
 }

@@ -1,7 +1,8 @@
-package com.github.basdgrt.scraping
+package com.github.basdgrt.models
 
 import arrow.core.Either
 import arrow.core.raise.either
+import com.github.basdgrt.scraping.ParseFailure
 import java.math.BigDecimal
 
 @JvmInline
