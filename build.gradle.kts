@@ -10,6 +10,11 @@ repositories {
 }
 
 dependencies {
+    implementation(platform("io.arrow-kt:arrow-stack:2.1.0"))
+
+    implementation("io.arrow-kt:arrow-core")
+    implementation("org.slf4j:slf4j-api:2.0.17")
+    implementation("ch.qos.logback:logback-classic:1.5.18")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
     implementation("org.jsoup:jsoup:1.17.2")
 
