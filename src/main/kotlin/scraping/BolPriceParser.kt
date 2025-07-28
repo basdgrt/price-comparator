@@ -26,7 +26,7 @@ class BolPriceParser : PriceParser {
             )
 
             val primaryPrice = priceElement.ownText().trim()
-            val fractionPrice = fractionElement.text().trim()
+            val fractionPrice = if(fractionElement.text().trim() == "-") "00" else fractionElement.text().trim()
 
             Price.of("$primaryPrice.$fractionPrice").bind()
         }
