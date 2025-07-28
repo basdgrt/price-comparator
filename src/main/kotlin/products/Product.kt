@@ -8,9 +8,10 @@ val products: List<Product> = listOf(
         name = "Maxi-Cosi FamilyFix 360",
         productDetailPages = listOf(
             ProductDetailPage(url = "https://www.bol.com/nl/nl/p/maxi-cosi-familyfix-360-i-size-isofix-autostoel-base-essential-grey/9300000074243531/?bltgh=oFC61UoF9XGrD3D6jvlDPw.4_8.9.ProductTitle"),
-            ProductDetailPage(url = "https://www.babypark.nl/maxi-cosi-familyfix-360.html")
+            ProductDetailPage(url = "https://www.babypark.nl/maxi-cosi-familyfix-360.html"),
+            ProductDetailPage(url = "https://www.vanastenbabysuperstore.nl/isofixbase-maxi-cosi-familyfix-360"),
         ),
-        originalPrice = Price.of("150.00").getOrNull()!!
+        originalPrice = Price.of("169.00").getOrNull()!!
     )
 )
 
@@ -32,6 +33,7 @@ private fun determineWebshop(url: String): Webshop {
     return when {
         url.contains("bol.com") -> Webshop.BOL
         url.contains("babypark") -> Webshop.BABY_PARK
+        url.contains("vanastenbabysuperstore") -> Webshop.VAN_ASTEN
         else -> throw IllegalArgumentException("Unsupported webshop URL: $url")
     }
 }

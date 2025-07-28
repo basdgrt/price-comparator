@@ -11,7 +11,8 @@ private val log = KotlinLogging.logger {}
 
 class PriceScraper(
     private val bolParser: PriceParser = BolPriceParser(),
-    private val babyParkParser: PriceParser = BabyParkPriceParser()
+    private val babyParkParser: PriceParser = BabyParkPriceParser(),
+    private val vanAstenPriceParser: PriceParser = VanAstenPriceParser()
 ) {
 
     fun scrape(product: Product) {
@@ -23,7 +24,8 @@ class PriceScraper(
            val result = when (detailPage.webshop) {
                 Webshop.BOL -> bolParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
                 Webshop.BABY_PARK -> babyParkParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
-            }
+               Webshop.VAN_ASTEN -> vanAstenPriceParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
+           }
 
             log.info { "Scraped price from ${detailPage.webshop}: €$result" }
         }
@@ -38,4 +40,3 @@ class PriceScraper(
             .get()
     }
 }
-
