@@ -13,7 +13,7 @@ class PriceScraper(
             val document: Document = fetchHTMLDocument(product)
 
             return when (product.webshop) {
-                Webshop.BOL -> bolParser.parse(document) ?: BigDecimal.ZERO
+                Webshop.BOL -> bolParser.parse(document).getOrNull()?.value ?: BigDecimal.ZERO
                 Webshop.BABYPARK -> TODO()
             }
         } catch (e: Exception) {

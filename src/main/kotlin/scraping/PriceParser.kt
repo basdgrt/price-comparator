@@ -1,9 +1,9 @@
 package com.github.basdgrt.scraping
 
+import arrow.core.Either
 import org.jsoup.nodes.Document
-import java.math.BigDecimal
 
 interface PriceParser {
 
-    fun parse(document: Document): BigDecimal?
+    fun parse(document: Document): Either<ParseFailure, Price>
 }
