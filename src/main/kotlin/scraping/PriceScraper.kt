@@ -12,7 +12,7 @@ import org.jsoup.nodes.Document
 
 private val log = KotlinLogging.logger {}
 
-data class ProductPrices(val productName: String, val scrapeResults: List<ScrapeResult>)
+data class ProductPrices(val product: Product, val scrapeResults: List<ScrapeResult>)
 data class ScrapeResult(val webshop: Webshop, val price: Either<ParseFailure, Price>)
 
 class PriceScraper(
@@ -35,7 +35,7 @@ class PriceScraper(
         }
 
         return ProductPrices(
-            productName = product.name,
+            product = product,
             scrapeResults = scrapeResults
         )
     }
