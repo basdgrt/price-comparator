@@ -22,7 +22,7 @@ class PriceScraper(
 
            val result = when (detailPage.webshop) {
                 Webshop.BOL -> bolParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
-                Webshop.BABY_PARK -> TODO()
+                Webshop.BABY_PARK -> babyParkParser.parse(html).getOrNull()?.value ?: BigDecimal.ZERO
             }
 
             log.info { "Scraped price from ${detailPage.webshop}: €$result" }
