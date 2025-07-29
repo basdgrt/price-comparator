@@ -1,7 +1,7 @@
 package com.github.basdgrt.scraping
 
 import arrow.core.Either
-import com.github.basdgrt.products.Price
+import com.github.basdgrt.products.WebshopPrice
 import io.mockk.every
 import io.mockk.mockk
 import org.jsoup.nodes.Document
@@ -98,14 +98,14 @@ class VanAstenPriceParserTest {
         every { priceElement.text() } returns price
     }
 
-    private fun assertSuccessfulParsing(result: Either<ScrapeFailure, Price>, expectedPrice: String) {
+    private fun assertSuccessfulParsing(result: Either<ScrapeFailure, WebshopPrice>, expectedPrice: String) {
         result.fold(
             { fail("Expected Right but got Left: $it") },
-            { price -> assertEquals(BigDecimal(expectedPrice), price.value) }
+            { webshopPrice -> assertEquals(BigDecimal(expectedPrice), webshopPrice.price.value) }
         )
     }
 
-    private fun assertPriceElementFailure(result: Either<ScrapeFailure, Price>, expectedElement: String) {
+    private fun assertPriceElementFailure(result: Either<ScrapeFailure, WebshopPrice>, expectedElement: String) {
         result.fold(
             { failure ->
                 assertTrue(failure is ScrapeFailure.FailedToFindPriceElement)
@@ -117,7 +117,7 @@ class VanAstenPriceParserTest {
         )
     }
 
-    private fun assertInvalidNumberFailure(result: Either<ScrapeFailure, Price>, expectedInput: String) {
+    private fun assertInvalidNumberFailure(result: Either<ScrapeFailure, WebshopPrice>, expectedInput: String) {
         result.fold(
             { failure ->
                 assertTrue(failure is ScrapeFailure.InvalidNumber)
