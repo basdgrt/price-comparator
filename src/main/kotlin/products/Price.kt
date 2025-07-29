@@ -1,4 +1,4 @@
-package com.github.basdgrt.models
+package com.github.basdgrt.products
 
 import arrow.core.Either
 import arrow.core.raise.either

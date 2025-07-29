@@ -1,19 +1,15 @@
 package com.github.basdgrt.scraping
 
-import arrow.core.Either
-import com.github.basdgrt.models.Price
-import com.github.basdgrt.models.Webshop
-import com.github.basdgrt.models.Webshop.*
 import com.github.basdgrt.products.Product
 import com.github.basdgrt.products.ProductDetailPage
+import com.github.basdgrt.products.ProductPrices
+import com.github.basdgrt.products.Webshop.*
+import com.github.basdgrt.products.WebshopPrice
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 
 private val log = KotlinLogging.logger {}
-
-data class ProductPrices(val product: Product, val scrapeResults: List<ScrapeResult>)
-data class ScrapeResult(val webshop: Webshop, val price: Either<ParseFailure, Price>)
 
 class PriceScraper(
     private val bolParser: PriceParser = BolPriceParser(),
@@ -24,20 +20,20 @@ class PriceScraper(
     fun scrape(product: Product): ProductPrices {
         log.info { "Finding prices for ${product.name}" }
 
-        val scrapeResults = product.productDetailPages.map { detailPage ->
+        val webshopPrices = product.productDetailPages.map { detailPage ->
             val html = fetchHTMLDocument(detailPage)
 
             // TODO create the ScrapeResult objects in the `parse` methods
             when (detailPage.webshop) {
-                BOL -> ScrapeResult(BOL, bolParser.parse(html))
-                BABY_PARK -> ScrapeResult(BABY_PARK, babyParkParser.parse(html))
-                VAN_ASTEN -> ScrapeResult(VAN_ASTEN, vanAstenPriceParser.parse(html))
+                BOL -> WebshopPrice(BOL, bolParser.parse(html))
+                BABY_PARK -> WebshopPrice(BABY_PARK, babyParkParser.parse(html))
+                VAN_ASTEN -> WebshopPrice(VAN_ASTEN, vanAstenPriceParser.parse(html))
             }
         }
 
         return ProductPrices(
             product = product,
-            scrapeResults = scrapeResults
+            webshopPrices = webshopPrices
         )
     }
 

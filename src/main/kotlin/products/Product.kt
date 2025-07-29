@@ -1,8 +1,5 @@
 package com.github.basdgrt.products
 
-import com.github.basdgrt.models.Price
-import com.github.basdgrt.models.Webshop
-
 val products: List<Product> = listOf(
     Product(
         name = "Maxi-Cosi FamilyFix 360",

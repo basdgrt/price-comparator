@@ -1,7 +1,7 @@
 package com.github.basdgrt.scraping
 
 import arrow.core.Either
-import com.github.basdgrt.models.Price
+import com.github.basdgrt.products.Price
 import io.mockk.every
 import io.mockk.mockk
 import org.jsoup.nodes.Document

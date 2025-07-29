@@ -1,18 +1,18 @@
 package com.github.basdgrt.comparator
 
-import com.github.basdgrt.models.Price
+import com.github.basdgrt.products.Price
 import com.github.basdgrt.products.ProductDetailPage
-import com.github.basdgrt.scraping.ProductPrices
+import com.github.basdgrt.products.ProductPrices
 import java.math.BigDecimal
 import java.text.NumberFormat
-import java.util.Locale
+import java.util.*
 
 class PriceComparator {
 
     fun compare(productPrices: ProductPrices): String {
         val product = productPrices.product
         val originalPrice = product.originalPrice
-        val scrapeResults = productPrices.scrapeResults
+        val scrapeResults = productPrices.webshopPrices
 
         val successfulScrapes = scrapeResults.count { it.price.isRight() }
         val totalScrapes = scrapeResults.size

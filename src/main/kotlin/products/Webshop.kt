@@ -1,4 +1,4 @@
-package com.github.basdgrt.models
+package com.github.basdgrt.products
 
 enum class Webshop {
     BOL,
