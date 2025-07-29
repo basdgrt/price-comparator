@@ -6,6 +6,8 @@ import org.telegram.telegrambots.meta.api.objects.Update
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 import io.github.oshai.kotlinlogging.KotlinLogging
 
+private const val BOT_USER_NAME = "baby_park_bot"
+
 /**
  * A notifier that sends messages to a Telegram chat using a Telegram bot.
  * 
@@ -33,7 +35,6 @@ class TelegramNotifier(
 
         return try {
             execute(sendMessage)
-            logger.info { "Message sent to Telegram chat $chatId" }
             true
         } catch (e: TelegramApiException) {
             logger.error(e) { "Failed to send message to Telegram chat $chatId" }
@@ -46,6 +47,6 @@ class TelegramNotifier(
     }
 
     override fun getBotUsername(): String {
-        return "baby_park_bot"
+        return BOT_USER_NAME
     }
 }
