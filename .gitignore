@@ -3,7 +3,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-secrets.yaml
+src/main/resources/secrets.yaml
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

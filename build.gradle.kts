@@ -17,6 +17,8 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.5.18")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
     implementation("org.jsoup:jsoup:1.17.2")
+    implementation("org.telegram:telegrambots:6.9.7.1")
+    implementation("org.yaml:snakeyaml:2.2")
 
     testImplementation(kotlin("test"))
     testImplementation("io.mockk:mockk:1.13.9")
