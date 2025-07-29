@@ -15,6 +15,8 @@ val products: List<Product> = listOf(
     )
 )
 
+// TODO add some validations. Every product should have at least a BabyPark url
+// TODO load products from a .yaml file
 data class Product(
     val name: String,
     val productDetailPages: List<ProductDetailPage>,
@@ -26,6 +28,7 @@ data class ProductDetailPage(
     val webshop: Webshop = determineWebshop(url)
 )
 
+// TODO refactor this so it becomes a method of the Webshop enum
 /**
  * Determines the webshop based on the URL.
  */

@@ -27,6 +27,7 @@ class PriceScraper(
         val scrapeResults = product.productDetailPages.map { detailPage ->
             val html = fetchHTMLDocument(detailPage)
 
+            // TODO create the ScrapeResult objects in the `parse` methods
             when (detailPage.webshop) {
                 BOL -> ScrapeResult(BOL, bolParser.parse(html))
                 BABY_PARK -> ScrapeResult(BABY_PARK, babyParkParser.parse(html))
