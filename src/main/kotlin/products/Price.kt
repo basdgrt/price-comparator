@@ -2,7 +2,7 @@ package com.github.basdgrt.products
 
 import arrow.core.Either
 import arrow.core.raise.either
-import com.github.basdgrt.scraping.ParseFailure
+import com.github.basdgrt.scraping.ScrapeFailure
 import java.math.BigDecimal
 
 @JvmInline
@@ -12,11 +12,11 @@ value class Price private constructor(val value: BigDecimal) {
     }
 
     companion object {
-        fun of(value: String): Either<ParseFailure, Price> = either {
+        fun of(value: String): Either<ScrapeFailure, Price> = either {
             try {
                 Price(value.toBigDecimal())
             } catch (e: Exception) {
-                raise(ParseFailure.InvalidNumber(value, e.message ?: "Unknown reason"))
+                raise(ScrapeFailure.InvalidNumber(value, e.message ?: "Unknown reason"))
             }
         }
     }

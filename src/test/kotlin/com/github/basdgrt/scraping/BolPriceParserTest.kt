@@ -116,18 +116,18 @@ class BolPriceParserTest {
         every { fractionElement.text() } returns fractionPrice
     }
 
-    private fun assertSuccessfulParsing(result: Either<ParseFailure, Price>, expectedPrice: String) {
+    private fun assertSuccessfulParsing(result: Either<ScrapeFailure, Price>, expectedPrice: String) {
         result.fold(
             { fail("Expected Right but got Left: $it") },
             { price -> assertEquals(BigDecimal(expectedPrice), price.value) }
         )
     }
 
-    private fun assertPriceElementFailure(result: Either<ParseFailure, Price>, expectedElement: String) {
+    private fun assertPriceElementFailure(result: Either<ScrapeFailure, Price>, expectedElement: String) {
         result.fold(
             { failure ->
-                assertTrue(failure is ParseFailure.FailedToFindPriceElement)
-                val error = failure as ParseFailure.FailedToFindPriceElement
+                assertTrue(failure is ScrapeFailure.FailedToFindPriceElement)
+                val error = failure as ScrapeFailure.FailedToFindPriceElement
                 assertEquals(expectedElement, error.element)
                 assertEquals(TEST_URL, error.baseUri)
             },
@@ -135,11 +135,11 @@ class BolPriceParserTest {
         )
     }
 
-    private fun assertInvalidNumberFailure(result: Either<ParseFailure, Price>, expectedInput: String) {
+    private fun assertInvalidNumberFailure(result: Either<ScrapeFailure, Price>, expectedInput: String) {
         result.fold(
             { failure ->
-                assertTrue(failure is ParseFailure.InvalidNumber)
-                val error = failure as ParseFailure.InvalidNumber
+                assertTrue(failure is ScrapeFailure.InvalidNumber)
+                val error = failure as ScrapeFailure.InvalidNumber
                 assertEquals(expectedInput, error.input)
             },
             { fail("Expected Left but got Right: $it") }
