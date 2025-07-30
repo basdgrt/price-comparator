@@ -6,8 +6,6 @@ import org.telegram.telegrambots.meta.api.objects.Update
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException
 import io.github.oshai.kotlinlogging.KotlinLogging
 
-private const val BOT_USER_NAME = "baby_park_bot"
-
 /**
  * A notifier that sends messages to a Telegram chat using a Telegram bot.
  * 
@@ -15,6 +13,7 @@ private const val BOT_USER_NAME = "baby_park_bot"
  * @param chatId The ID of the chat to send messages to
  */
 class TelegramNotifier(
+    private val botUserName: String,
     private val botToken: String,
     private val chatId: String
 ) : TelegramLongPollingBot(botToken) {
@@ -47,6 +46,6 @@ class TelegramNotifier(
     }
 
     override fun getBotUsername(): String {
-        return BOT_USER_NAME
+        return botUserName
     }
 }

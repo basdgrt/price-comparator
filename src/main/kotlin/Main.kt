@@ -11,12 +11,13 @@ import kotlin.system.exitProcess
 fun main() {
     val botToken = SecretsLoader.getSecret("botToken") ?: throw IllegalStateException("Bot token not found in secrets.yaml")
     val chatId = SecretsLoader.getSecret("chatId") ?: throw IllegalStateException("Chat ID not found in secrets.yaml")
+    val botUserName = SecretsLoader.getSecret("botUserName") ?: throw IllegalStateException("Bot user name not found in secrets.yaml")
 
     val products: List<Product> = ProductLoader.loadProducts()
 
     val priceScraper = PriceScraper()
     val comparator = Comparator()
-    val telegramNotifier = TelegramNotifier(botToken, chatId)
+    val telegramNotifier = TelegramNotifier(botUserName, botToken, chatId)
 
     for (product in products) {
         val productPrices = priceScraper.scrape(product)
