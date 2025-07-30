@@ -22,6 +22,7 @@ private fun determineWebshop(url: String): Webshop {
         url.contains("bol.com") -> Webshop.BOL
         url.contains("babypark") -> Webshop.BABY_PARK
         url.contains("vanastenbabysuperstore") -> Webshop.VAN_ASTEN
+        url.contains("maxi-cosi.nl") -> Webshop.MAXI_COSI
         else -> throw IllegalArgumentException("Unsupported webshop URL: $url")
     }
 }

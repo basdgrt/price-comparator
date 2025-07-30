@@ -13,7 +13,8 @@ private val log = KotlinLogging.logger {}
 class PriceScraper(
     private val bolParser: PriceParser = BolPriceParser(),
     private val babyParkParser: PriceParser = BabyParkPriceParser(),
-    private val vanAstenPriceParser: PriceParser = VanAstenPriceParser()
+    private val vanAstenPriceParser: PriceParser = VanAstenPriceParser(),
+    private val maxiCosiPriceParser: PriceParser = MaxiCosiPriceParser()
 ) {
 
     fun scrape(product: Product): ProductPrices {
@@ -26,6 +27,7 @@ class PriceScraper(
                 BOL -> bolParser.parse(html)
                 BABY_PARK -> babyParkParser.parse(html)
                 VAN_ASTEN -> vanAstenPriceParser.parse(html)
+                MAXI_COSI -> maxiCosiPriceParser.parse(html)
             }
         }
 

@@ -26,8 +26,6 @@ class BabyParkPriceParser : PriceParser {
                 .replace(",-", "")
                 .replace(",", ".")
 
-            println(priceText)
-
             WebshopPrice(
                 productDetailPage = ProductDetailPage(document.baseUri()),
                 price = Price.of(priceText).bind()

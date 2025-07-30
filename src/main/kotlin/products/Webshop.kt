@@ -3,5 +3,6 @@ package com.github.basdgrt.products
 enum class Webshop {
     BOL,
     BABY_PARK,
-    VAN_ASTEN
+    VAN_ASTEN,
+    MAXI_COSI
 }
