@@ -24,7 +24,7 @@ fun main() {
         val comparisonResult = comparator.compare(productPrices)
 
         println(comparisonResult)
-//        telegramNotifier.sendMessage(comparisonResult)
+        telegramNotifier.sendMessage(comparisonResult)
     }
 
     // Force the application to exit.
