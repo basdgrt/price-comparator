@@ -1,6 +1,62 @@
+- name: "We-Too Luieremmer Oatmeal"
+  originalPrice: "49.99"
+  urls:
+    - "https://www.babypark.nl/we-too-luieremmer.html?color=467"
+
+- name: "Luma Badstandaard Black"
+  originalPrice: "31.99"
+  urls:
+    - "https://www.babypark.nl/luma-badstandaard.html?color=613"
+
+- name: "Europe Baby Circa Ronde Box Oatmeal"
+  originalPrice: "278.00"
+  urls:
+    - "https://www.babypark.nl/europe-baby-circa-ronde-box.html?color=25977"
+
+- name: "Pretura Boxmatras Rond 90 x 4,5 cm"
+  originalPrice: "53.00"
+  urls:
+    - "https://www.babypark.nl/pretura-boxmatras-rond-90-x-4-5-cm.html"
+
+- name: "Boxmatras hoes rond Ø 90 cm Soft Elegance II Natural"
+  originalPrice: "58.00"
+  urls:
+    - "https://www.babypark.nl/kidsmill-soft-elegance-boxmatras-hoes.html?color=26667"
+
+- name: "Little Dutch Wipstoel - Beige"
+  originalPrice: "69.00"
+  urls:
+    - "https://www.babypark.nl/little-dutch-wipstoel-606415.html?color=467"
+
+- name: "Dubatti Two E2 Kinderwagen"
+  originalPrice: "1279.95"
+  urls:
+    - "https://www.babypark.nl/dubatti-two-e2-kinderwagen-2-in-1-mix-match.html"
+
+- name: "Dubatti Two E2 Regenhoes"
+  originalPrice: "39.99"
+  urls:
+    - "https://www.babypark.nl/dubatti-two-54.html"
+
+- name: "Dubatti Two E2 Autostoel Adapter"
+  originalPrice: "39.99"
+  urls:
+    - "https://www.babypark.nl/dubatti-two-53.html"
+
+- name: "Maxi-Cosi FamilyFix 360 Pro"
+  originalPrice: "225.00"
+  urls:
+    - "https://www.babypark.nl/maxi-cosi-familyfix-360-pro-8051057110.html"
+
 - name: "Maxi-Cosi FamilyFix 360"
-  originalPrice: "169.00"
+  originalPrice: "157.00"
   urls:
     - "https://www.bol.com/nl/nl/p/maxi-cosi-familyfix-360-i-size-isofix-autostoel-base-essential-grey/9300000074243531/?bltgh=oFC61UoF9XGrD3D6jvlDPw.4_8.9.ProductTitle"
     - "https://www.babypark.nl/maxi-cosi-familyfix-360.html"
     - "https://www.vanastenbabysuperstore.nl/isofixbase-maxi-cosi-familyfix-360"
+
+- name: "Maxi-Cosi Pebble 360 Pro 2 Autostoeltje - Twillic Black"
+  originalPrice: "249.00"
+  urls:
+    - "https://www.babypark.nl/maxi-cosi-pebble-360-pro-2-autostoeltje.html?color=26074"
+

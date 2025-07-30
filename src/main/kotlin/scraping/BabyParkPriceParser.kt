@@ -22,7 +22,11 @@ class BabyParkPriceParser : PriceParser {
                 )
             )
 
-            val priceText = priceElement.text().trim().replace(",", ".")
+            val priceText = priceElement.text().trim()
+                .replace(",-", "")
+                .replace(",", ".")
+
+            println(priceText)
 
             WebshopPrice(
                 productDetailPage = ProductDetailPage(document.baseUri()),
