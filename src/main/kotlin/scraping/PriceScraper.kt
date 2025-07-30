@@ -14,7 +14,8 @@ class PriceScraper(
     private val bolParser: PriceParser = BolPriceParser(),
     private val babyParkParser: PriceParser = BabyParkPriceParser(),
     private val vanAstenPriceParser: PriceParser = VanAstenPriceParser(),
-    private val maxiCosiPriceParser: PriceParser = MaxiCosiPriceParser()
+    private val maxiCosiPriceParser: PriceParser = MaxiCosiPriceParser(),
+    private val prenatalPriceParser: PriceParser = PrenatalPriceParser(),
 ) {
 
     fun scrape(product: Product): ProductPrices {
@@ -28,6 +29,7 @@ class PriceScraper(
                 BABY_PARK -> babyParkParser.parse(html)
                 VAN_ASTEN -> vanAstenPriceParser.parse(html)
                 MAXI_COSI -> maxiCosiPriceParser.parse(html)
+                PRENATAL -> prenatalPriceParser.parse(html)
             }
         }
 

@@ -4,5 +4,6 @@ enum class Webshop {
     BOL,
     BABY_PARK,
     VAN_ASTEN,
-    MAXI_COSI
+    MAXI_COSI,
+    PRENATAL
 }
