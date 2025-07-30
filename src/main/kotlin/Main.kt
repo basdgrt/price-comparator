@@ -25,7 +25,7 @@ fun main() {
         telegramNotifier.sendMessage(comparisonResult)
     }
 
-    // Force the application to exit after sending the message
+    // Force the application to exit.
     // This is necessary because the TelegramLongPollingBot keeps running in the background
     exitProcess(0)
 }
