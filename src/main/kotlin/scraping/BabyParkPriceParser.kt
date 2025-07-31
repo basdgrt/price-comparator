@@ -23,6 +23,7 @@ class BabyParkPriceParser : PriceParser {
             )
 
             val priceText = priceElement.text().trim()
+                .replace(".", "")
                 .replace(",-", "")
                 .replace(",", ".")
 
