@@ -23,7 +23,6 @@ fun main() {
         val productPrices = priceScraper.scrape(product)
         val comparisonResult = comparator.compare(productPrices)
 
-        println(comparisonResult)
         telegramNotifier.sendMessage(comparisonResult)
     }
 
