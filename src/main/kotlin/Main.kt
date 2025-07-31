@@ -1,14 +1,17 @@
 package com.github.basdgrt
 
+import arrow.fx.coroutines.parMap
 import com.github.basdgrt.comparator.Comparator
 import com.github.basdgrt.config.SecretsLoader
 import com.github.basdgrt.notifications.TelegramNotifier
 import com.github.basdgrt.products.Product
 import com.github.basdgrt.products.ProductLoader
 import com.github.basdgrt.scraping.PriceScraper
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import kotlin.system.exitProcess
 
-fun main() {
+fun main(): Unit = runBlocking {
     val botToken = SecretsLoader.getSecret("botToken") ?: throw IllegalStateException("Bot token not found in secrets.yaml")
     val chatId = SecretsLoader.getSecret("chatId") ?: throw IllegalStateException("Chat ID not found in secrets.yaml")
     val botUserName = SecretsLoader.getSecret("botUserName") ?: throw IllegalStateException("Bot user name not found in secrets.yaml")
@@ -19,7 +22,7 @@ fun main() {
     val comparator = Comparator()
     val telegramNotifier = TelegramNotifier(botUserName, botToken, chatId)
 
-    for (product in products) {
+    products.parMap(Dispatchers.IO) { product ->
         val productPrices = priceScraper.scrape(product)
         val comparisonResult = comparator.compare(productPrices)
 

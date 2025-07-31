@@ -7,6 +7,11 @@ import com.github.basdgrt.products.ProductDetailPage
 import com.github.basdgrt.products.ProductPrices
 import com.github.basdgrt.products.Webshop.*
 import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 
@@ -22,24 +27,26 @@ class PriceScraper(
     private val littleDutchPriceParser: PriceParser = LittleDutchPriceParser(),
 ) {
 
-    fun scrape(product: Product): ProductPrices {
+    suspend fun scrape(product: Product): ProductPrices = coroutineScope {
         log.info { "Finding prices for ${product.name}" }
 
         val webshopPrices = product.productDetailPages.map { detailPage ->
-            fetchHTMLDocument(detailPage).flatMap { html ->
-                when (detailPage.webshop) {
-                    BABY_PARK -> babyParkParser.parse(html)
-                    BABY_DUMP -> babyDumpParser.parse(html)
-                    BOL -> bolParser.parse(html)
-                    VAN_ASTEN -> vanAstenPriceParser.parse(html)
-                    MAXI_COSI -> maxiCosiPriceParser.parse(html)
-                    PRENATAL -> prenatalPriceParser.parse(html)
-                    LITTLE_DUTCH -> littleDutchPriceParser.parse(html)
+            async {
+                fetchHTMLDocument(detailPage).flatMap { html ->
+                    when (detailPage.webshop) {
+                        BABY_PARK -> babyParkParser.parse(html)
+                        BABY_DUMP -> babyDumpParser.parse(html)
+                        BOL -> bolParser.parse(html)
+                        VAN_ASTEN -> vanAstenPriceParser.parse(html)
+                        MAXI_COSI -> maxiCosiPriceParser.parse(html)
+                        PRENATAL -> prenatalPriceParser.parse(html)
+                        LITTLE_DUTCH -> littleDutchPriceParser.parse(html)
+                    }
                 }
             }
-        }
+        }.awaitAll()
 
-        return ProductPrices(
+        ProductPrices(
             product = product,
             webshopPrices = webshopPrices
         )
@@ -47,15 +54,17 @@ class PriceScraper(
 
     // Connect to the URL and get the HTML document
     // Set a user agent to avoid being blocked
-    private fun fetchHTMLDocument(productDetailPage: ProductDetailPage): Either<ScrapeFailure, Document> {
-        return Either.catch {
-            Jsoup.connect(productDetailPage.url)
-                .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
-                .timeout(10000)
-                .get()
-        }.mapLeft { exception ->
-            log.error(exception) { exception.message }
-            ScrapeFailure.JsoupConnectionError(productDetailPage.url)
+    private suspend fun fetchHTMLDocument(productDetailPage: ProductDetailPage): Either<ScrapeFailure, Document> {
+        return withContext(Dispatchers.IO) {
+            Either.catch {
+                Jsoup.connect(productDetailPage.url)
+                    .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+                    .timeout(10000)
+                    .get()
+            }.mapLeft { exception ->
+                log.error(exception) { exception.message }
+                ScrapeFailure.JsoupConnectionError(productDetailPage.url)
+            }
         }
     }
 }
