@@ -18,7 +18,7 @@ class Comparator {
         val resultBuilder = buildString {
 
             appendLine(productPrices.product.name)
-            appendLine("Sites vergeleken: $totalScrapes/$successCount")
+            appendLine("Sites vergeleken: $successCount/$totalScrapes")
             appendLine("Oorspronkelijke prijs: ${productPrices.product.originalPrice}")
 
             cheapestPrice?.let { webshopPrice ->

@@ -15,6 +15,7 @@ private val log = KotlinLogging.logger {}
 class PriceScraper(
     private val bolParser: PriceParser = BolPriceParser(),
     private val babyParkParser: PriceParser = BabyParkPriceParser(),
+    private val babyDumpParser: PriceParser = BabyDumpPriceParser(),
     private val vanAstenPriceParser: PriceParser = VanAstenPriceParser(),
     private val maxiCosiPriceParser: PriceParser = MaxiCosiPriceParser(),
     private val prenatalPriceParser: PriceParser = PrenatalPriceParser(),
@@ -28,7 +29,7 @@ class PriceScraper(
             fetchHTMLDocument(detailPage).flatMap { html ->
                 when (detailPage.webshop) {
                     BABY_PARK -> babyParkParser.parse(html)
-                    BABY_DUMP -> babyParkParser.parse(html)
+                    BABY_DUMP -> babyDumpParser.parse(html)
                     BOL -> bolParser.parse(html)
                     VAN_ASTEN -> vanAstenPriceParser.parse(html)
                     MAXI_COSI -> maxiCosiPriceParser.parse(html)

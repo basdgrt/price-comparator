@@ -2,12 +2,14 @@
   originalPrice: "49.99"
   urls:
     - "https://www.babypark.nl/we-too-luieremmer.html?color=467"
+    - "https://www.baby-dump.nl/we-too-luieremmer.html?color=467"
     - "https://www.bol.com/nl/nl/p/we-too-luieremmer-oatmeal/9300000176922284/?bltgh=nHV2SeKVCmA-4LZUcedPAA.4_8.9.ProductTitle"
 
 - name: "Luma Badstandaard Black"
   originalPrice: "31.99"
   urls:
     - "https://www.babypark.nl/luma-badstandaard.html?color=613"
+    - "https://www.baby-dump.nl/luma-badstandaard.html?color=613"
 
 - name: "Europe Baby Circa Ronde Box Oatmeal"
   originalPrice: "278.00"
@@ -29,6 +31,7 @@
   originalPrice: "69.00"
   urls:
     - "https://www.babypark.nl/little-dutch-wipstoel-606415.html?color=467"
+    - "https://www.baby-dump.nl/little-dutch-wipstoel-534747.html?color=467"
     - "https://www.bol.com/nl/nl/p/little-dutch-wipstoel-beige/9300000174976247/?bltgh=nb5kGO-8eWLqmUK-gPJAyg.4_13.14.ProductTitle"
     - "https://little-dutch.com/products/wipstoel-beige-essentials?variant=50602183098655&gad_source=1&gad_campaignid=22634323358&gbraid=0AAAAADv-msxk-LaFyLyDPZtepRuF9qn7r&gclid=EAIaIQobChMIwYvgzZTljgMV8pCDBx3sPBNtEAQYBiABEgKW5_D_BwE"
 
@@ -36,22 +39,24 @@
   originalPrice: "1279.95"
   urls:
     - "https://www.babypark.nl/dubatti-two-e2-kinderwagen-2-in-1-mix-match.html"
-    - "https://www.baby-dump.nl/dubatti-two-e2-kinderwagen-2-in-1-mix-match.html"
 
 - name: "Dubatti Two E2 Regenhoes"
   originalPrice: "39.99"
   urls:
     - "https://www.babypark.nl/dubatti-two-54.html"
+    - "https://www.baby-dump.nl/dubatti-54.html"
 
 - name: "Dubatti Two E2 Autostoel Adapter"
   originalPrice: "39.99"
   urls:
     - "https://www.babypark.nl/dubatti-two-53.html"
+    - "https://www.baby-dump.nl/dubatti-53.html"
 
 - name: "Maxi-Cosi FamilyFix 360 Pro"
   originalPrice: "225.00"
   urls:
     - "https://www.babypark.nl/maxi-cosi-familyfix-360-pro-8051057110.html"
+    - "https://www.baby-dump.nl/maxi-cosi-familyfix-360-pro.html"
     - "https://www.vanastenbabysuperstore.nl/isofixbase-maxi-cosi-familyfix-360-pro-slide-tech"
     - "https://www.maxi-cosi.nl/autostoelen/familyfix-360-pro"
 
@@ -60,6 +65,7 @@
   urls:
     - "https://www.bol.com/nl/nl/p/maxi-cosi-familyfix-360-i-size-isofix-autostoel-base-essential-grey/9300000074243531/?bltgh=oFC61UoF9XGrD3D6jvlDPw.4_8.9.ProductTitle"
     - "https://www.babypark.nl/maxi-cosi-familyfix-360.html"
+    - "https://www.baby-dump.nl/maxi-cosi-familyfix-360.html"
     - "https://www.vanastenbabysuperstore.nl/isofixbase-maxi-cosi-familyfix-360"
     - "https://www.maxi-cosi.nl/autostoelen/familyfix-360"
 

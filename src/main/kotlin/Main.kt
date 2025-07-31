@@ -23,7 +23,9 @@ fun main() {
         val productPrices = priceScraper.scrape(product)
         val comparisonResult = comparator.compare(productPrices)
 
-        telegramNotifier.sendMessage(comparisonResult)
+        println(comparisonResult)
+
+//        telegramNotifier.sendMessage(comparisonResult)
     }
 
     // Force the application to exit.
