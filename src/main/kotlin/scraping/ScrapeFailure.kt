@@ -9,11 +9,10 @@ sealed interface ScrapeFailure {
         override fun errorMessage() = "Failed to parse price: $input"
     }
     data class FailedToFindPriceElement(val webshop: Webshop, val element: String, val baseUri: String): ScrapeFailure {
-        override fun errorMessage() = "Failed to find price element on $webshop"
+        override fun errorMessage() = "Failed to find price element on ${webshop.name}"
     }
 
     data class JsoupConnectionError(val baseUri: String): ScrapeFailure {
         override fun errorMessage() = "Failed to connect to $baseUri"
     }
 }
-
