@@ -52,12 +52,12 @@ class PriceScraper(
         )
     }
 
-    // Connect to the URL and get the HTML document
-    // Set a user agent to avoid being blocked
+
     private suspend fun fetchHTMLDocument(productDetailPage: ProductDetailPage): Either<ScrapeFailure, Document> {
         return withContext(Dispatchers.IO) {
             Either.catch {
                 Jsoup.connect(productDetailPage.url)
+                    // Set a user agent to avoid being blocked
                     .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
                     .timeout(10000)
                     .get()
