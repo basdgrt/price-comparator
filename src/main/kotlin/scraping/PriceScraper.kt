@@ -52,7 +52,6 @@ class PriceScraper(
         )
     }
 
-
     private suspend fun fetchHTMLDocument(productDetailPage: ProductDetailPage): Either<ScrapeFailure, Document> {
         return withContext(Dispatchers.IO) {
             Either.catch {

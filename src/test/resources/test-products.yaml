@@ -1,0 +1,18 @@
+- name: "Test Product 1"
+  originalPrice: "99.99"
+  urls:
+    - "https://www.bol.com/nl/nl/p/test-product-1/123456789"
+    - "https://www.babypark.nl/test-product-1.html"
+
+- name: "Test Product 2"
+  originalPrice: "49.95"
+  urls:
+    - "https://www.baby-dump.nl/test-product-2.html"
+    - "https://www.bol.com/nl/nl/p/test-product-2/123456789"
+
+- name: "Test Product 3"
+  originalPrice: "199.00"
+  urls:
+    - "https://www.baby-dump.nl/test-product-3"
+    - "https://www.babypark.nl/test-product-3"
+    - "https://www.vanastenbabysuperstore.nl/test-product-3"
