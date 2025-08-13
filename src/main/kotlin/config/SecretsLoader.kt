@@ -30,7 +30,7 @@ class SecretsLoader {
          * and falling back to the file system.
          */
         private fun getSecretsInputStream(): InputStream {
-            // First try to load from classpath (for JAR deployment)
+            // First, try to load from classpath (for JAR deployment)
             val classpathStream = SecretsLoader::class.java.getResourceAsStream(CLASSPATH_SECRETS_FILE)
             if (classpathStream != null) {
                 return classpathStream
