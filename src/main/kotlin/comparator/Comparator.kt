@@ -19,7 +19,7 @@ class Comparator {
 
             appendLine(productPrices.product.name)
             appendLine("Originele prijs: ${productPrices.product.originalPrice}")
-            appendLine("Sites vergeleken: $totalScrapes/$successCount")
+            appendLine("Sites vergeleken: $successCount/$totalScrapes")
 
             cheapestPrice?.let { webshopPrice ->
                 val cheapestValue = webshopPrice.price
