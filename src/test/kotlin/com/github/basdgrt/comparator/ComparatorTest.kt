@@ -51,12 +51,12 @@ class ComparatorTest {
         // Then
         val expectedResult = """
             Test Product
-            Original price: €100.00
-            Sites checked: 3/3
-            Cheaper price found at VAN_ASTEN: €85.00.
-            Difference: €15.00
+            Originele prijs: €100.00
+            Sites vergeleken: 3/3
+            Goedkoper gevonden op: VAN_ASTEN: €85.00.
+            Verschil: €15.00
 
-            Product detail page: https://www.vanastenbabysuperstore.nl/test
+            Product detail pagina: https://www.vanastenbabysuperstore.nl/test
             """.trimIndent()
 
         assertEquals(expectedResult, result.trim())
@@ -84,9 +84,9 @@ class ComparatorTest {
         // Then
         val expectedResult = """
             Test Product
-            Original price: €100.00
-            Sites checked: 3/3
-            No cheaper prices found.
+            Originele prijs: €100.00
+            Sites vergeleken: 3/3
+            Geen goedkopere opties gevonden.
             """.trimIndent()
 
         assertEquals(expectedResult, result.trim())
@@ -114,9 +114,9 @@ class ComparatorTest {
         // Then
         val expectedResult = """
             Test Product
-            Original price: €100.00
-            Sites checked: 3/3
-            No cheaper prices found.
+            Originele prijs: €100.00
+            Sites vergeleken: 3/3
+            Geen goedkopere opties gevonden.
             """.trimIndent()
 
         assertEquals(expectedResult, result.trim())
@@ -148,14 +148,14 @@ class ComparatorTest {
         // Then
         val expectedResult = """
             Test Product
-            Original price: €100.00
-            Sites checked: 3/2
-            Cheaper price found at BOL: €90.00.
-            Difference: €10.00
+            Originele prijs: €100.00
+            Sites vergeleken: 2/3
+            Goedkoper gevonden op: BOL: €90.00.
+            Verschil: €10.00
 
-            Product detail page: https://www.bol.com/test
+            Product detail pagina: https://www.bol.com/test
 
-             Scrapes failed for:
+             Ophalen van prijzen mislukt:
             Failed to find price element on BABY_PARK
             """.trimIndent()
 
@@ -195,10 +195,10 @@ class ComparatorTest {
         // Then
         val expectedResult = """
             Test Product
-            Original price: €100.00
-            Sites checked: 3/0
+            Originele prijs: €100.00
+            Sites vergeleken: 0/3
 
-             Scrapes failed for:
+             Ophalen van prijzen mislukt:
             Failed to find price element on BOL
             Failed to parse price: invalid
             Failed to find price element on VAN_ASTEN
@@ -221,8 +221,8 @@ class ComparatorTest {
         // Then
         val expectedResult = """
             Test Product
-            Original price: €100.00
-            Sites checked: 0/0
+            Originele prijs: €100.00
+            Sites vergeleken: 0/0
             """.trimIndent()
 
         assertEquals(expectedResult, result.trim())
