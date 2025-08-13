@@ -18,8 +18,8 @@ class Comparator {
         val resultBuilder = buildString {
 
             appendLine(productPrices.product.name)
-            appendLine("Original price: ${productPrices.product.originalPrice}")
-            appendLine("Sites checked: $totalScrapes/$successCount")
+            appendLine("Originele prijs: ${productPrices.product.originalPrice}")
+            appendLine("Sites vergeleken: $totalScrapes/$successCount")
 
             cheapestPrice?.let { webshopPrice ->
                 val cheapestValue = webshopPrice.price
@@ -27,17 +27,17 @@ class Comparator {
 
                 if (cheapestValue < originalPrice) {
                     val difference = originalPrice - cheapestValue
-                    appendLine("Cheaper price found at ${webshopPrice.productDetailPage.webshop.name}: ${webshopPrice.price}.")
-                    appendLine("Difference: $difference")
+                    appendLine("Goedkoper gevonden op: ${webshopPrice.productDetailPage.webshop.name}: ${webshopPrice.price}.")
+                    appendLine("Verschil: $difference")
                     appendLine()
-                    appendLine("Product detail page: ${webshopPrice.productDetailPage.url}")
+                    appendLine("Product detail pagina: ${webshopPrice.productDetailPage.url}")
                 } else {
-                    appendLine("No cheaper prices found.")
+                    appendLine("Geen goedkopere opties gevonden.")
                 }
             }
 
             if (failedScrapes.isNotEmpty()) {
-                appendLine("\n Scrapes failed for:")
+                appendLine("\n Ophalen van prijzen mislukt:")
                 failedScrapes.forEach { scrape -> appendLine("${scrape.leftOrNull()?.errorMessage()}") }
             }
         }
