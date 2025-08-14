@@ -26,10 +26,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.3")
 
-    // AWS Lambda dependencies
-    implementation("com.amazonaws:aws-lambda-java-core:1.2.3")
-    implementation("com.amazonaws:aws-lambda-java-events:3.11.3")
-
     testImplementation(kotlin("test"))
     testImplementation("io.mockk:mockk:1.13.9")
 }
