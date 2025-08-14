@@ -25,6 +25,7 @@ class PriceScraper(
     private val maxiCosiPriceParser: PriceParser = MaxiCosiPriceParser(),
     private val prenatalPriceParser: PriceParser = PrenatalPriceParser(),
     private val littleDutchPriceParser: PriceParser = LittleDutchPriceParser(),
+    private val coolbluePriceParser: PriceParser = CoolbluePriceParser(),
 ) {
 
     suspend fun scrape(product: Product): ProductPrices = coroutineScope {
@@ -41,6 +42,7 @@ class PriceScraper(
                         MAXI_COSI -> maxiCosiPriceParser.parse(html)
                         PRENATAL -> prenatalPriceParser.parse(html)
                         LITTLE_DUTCH -> littleDutchPriceParser.parse(html)
+                        COOLBLUE -> coolbluePriceParser.parse(html)
                     }
                 }
             }

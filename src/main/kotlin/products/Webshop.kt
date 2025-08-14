@@ -7,7 +7,8 @@ enum class Webshop(val url: String) {
     VAN_ASTEN("vanastenbabysuperstore.nl"),
     MAXI_COSI("maxi-cosi.nl"),
     PRENATAL("prenatal.nl"),
-    LITTLE_DUTCH("little-dutch.com");
+    LITTLE_DUTCH("little-dutch.com"),
+    COOLBLUE("coolblue.nl");
 
     companion object {
         fun fromURL(url: String): Webshop = entries.single() { url.contains(it.url) }
