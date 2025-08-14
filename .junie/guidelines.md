@@ -22,16 +22,6 @@ This service is broken into distinct features, each corresponding to a specific 
 - Use **coroutines** to handle concurrent scraping of multiple URLs.
 - Follow Kotlin's idiomatic principles; avoid unnecessary Java interop.
 
-#### AWS Lambda Best Practices:
-- Minimize cold start times:
-    - Use Java 17 runtime for AWS Lambda.
-    - Avoid unnecessary libraries or dependencies.
-
-- Package the app as a **fat JAR** using the Shadow plugin:
-  `./gradlew shadowJar`.
-- Optimize logging to ensure Lambda remains lightweight:
-    - Configure efficient log levels in `logback.xml`.
-
 #### Dependency Management:
 - Scraping: Use `Jsoup` or a similar library for HTML parsing.
 - Telegram Bot API: Use a library like `kotlin-telegram-bot`.
