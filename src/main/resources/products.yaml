@@ -1,0 +1,78 @@
+- name: "We-Too Luieremmer Oatmeal"
+  originalPrice: "49.99"
+  urls:
+    - "https://www.babypark.nl/we-too-luieremmer.html?color=467"
+    - "https://www.baby-dump.nl/we-too-luieremmer.html?color=467"
+    - "https://www.bol.com/nl/nl/p/we-too-luieremmer-oatmeal/9300000176922284/?bltgh=nHV2SeKVCmA-4LZUcedPAA.4_8.9.ProductTitle"
+
+- name: "Luma Badstandaard Black"
+  originalPrice: "31.99"
+  urls:
+    - "https://www.babypark.nl/luma-badstandaard.html?color=613"
+    - "https://www.baby-dump.nl/luma-badstandaard.html?color=613"
+
+- name: "Europe Baby Circa Ronde Box Oatmeal"
+  originalPrice: "278.00"
+  urls:
+    - "https://www.babypark.nl/europe-baby-circa-ronde-box.html?color=25977"
+
+- name: "Pretura Boxmatras Rond 90 x 4,5 cm"
+  originalPrice: "53.00"
+  urls:
+    - "https://www.babypark.nl/pretura-boxmatras-rond-90-x-4-5-cm.html"
+    - "https://www.bol.com/nl/nl/p/pretura-matras-voor-box-rond-90-x-4-5-cm/9300000000442410/?bltgh=h2ZX0j51LiTmXyR1RiRMFA.4_8.9.ProductTitle"
+
+- name: "Boxmatras hoes rond Ø 90 cm Soft Elegance II Natural"
+  originalPrice: "58.00"
+  urls:
+    - "https://www.babypark.nl/kidsmill-soft-elegance-boxmatras-hoes.html?color=26667"
+
+- name: "Little Dutch Wipstoel - Beige"
+  originalPrice: "69.00"
+  urls:
+    - "https://www.babypark.nl/little-dutch-wipstoel-606415.html?color=467"
+    - "https://www.baby-dump.nl/little-dutch-wipstoel-534747.html?color=467"
+    - "https://www.bol.com/nl/nl/p/little-dutch-wipstoel-beige/9300000174976247/?bltgh=nb5kGO-8eWLqmUK-gPJAyg.4_13.14.ProductTitle"
+    - "https://little-dutch.com/products/wipstoel-beige-essentials?variant=50602183098655&gad_source=1&gad_campaignid=22634323358&gbraid=0AAAAADv-msxk-LaFyLyDPZtepRuF9qn7r&gclid=EAIaIQobChMIwYvgzZTljgMV8pCDBx3sPBNtEAQYBiABEgKW5_D_BwE"
+
+- name: "Dubatti Two E2 Kinderwagen"
+  originalPrice: "1279.95"
+  urls:
+    - "https://www.babypark.nl/dubatti-two-e2-kinderwagen-2-in-1-mix-match.html"
+
+- name: "Dubatti Two E2 Regenhoes"
+  originalPrice: "39.99"
+  urls:
+    - "https://www.babypark.nl/dubatti-two-54.html"
+    - "https://www.baby-dump.nl/dubatti-54.html"
+
+- name: "Dubatti Two E2 Autostoel Adapter"
+  originalPrice: "39.99"
+  urls:
+    - "https://www.babypark.nl/dubatti-two-53.html"
+    - "https://www.baby-dump.nl/dubatti-53.html"
+
+- name: "Maxi-Cosi FamilyFix 360 Pro"
+  originalPrice: "179.00"
+  urls:
+    - "https://www.babypark.nl/maxi-cosi-familyfix-360-pro-8051057110.html"
+    - "https://www.baby-dump.nl/maxi-cosi-familyfix-360-pro.html"
+    - "https://www.vanastenbabysuperstore.nl/isofixbase-maxi-cosi-familyfix-360-pro-slide-tech"
+    - "https://www.maxi-cosi.nl/autostoelen/familyfix-360-pro"
+
+- name: "Maxi-Cosi FamilyFix 360"
+  originalPrice: "153.95"
+  urls:
+    - "https://www.bol.com/nl/nl/p/maxi-cosi-familyfix-360-i-size-isofix-autostoel-base-essential-grey/9300000074243531/?bltgh=oFC61UoF9XGrD3D6jvlDPw.4_8.9.ProductTitle"
+    - "https://www.babypark.nl/maxi-cosi-familyfix-360.html"
+    - "https://www.baby-dump.nl/maxi-cosi-familyfix-360.html"
+    - "https://www.vanastenbabysuperstore.nl/isofixbase-maxi-cosi-familyfix-360"
+    - "https://www.maxi-cosi.nl/autostoelen/familyfix-360"
+
+- name: "Maxi-Cosi Pebble 360 Pro 2 Autostoeltje - Twillic Black"
+  originalPrice: "179.00"
+  urls:
+    - "https://www.babypark.nl/maxi-cosi-pebble-360-pro-2-autostoeltje.html?color=26074"
+    - "https://www.maxi-cosi.nl/autostoelen/pebble-360-pro2"
+    - "https://www.vanastenbabysuperstore.nl/autostoel-maxi-cosi-pebble-360-pro2-slide-tech-twillic-black"
+    - "https://www.prenatal.nl/maxi-cosi-pebble-360-pro2-i-size-twillic-black-5879280/"
